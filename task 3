@@ -1,0 +1,22 @@
+public class task3 {
+    public static void main(String[] args) {
+        int[]array = {1,2,3,4,5,6,7,8,9};
+        int positions = 3;
+        rotateArray(array,positions);
+    }
+    public static int[] rotateArray(int[] array, int positions) {
+        int[] result = new int[array.length];
+        int[] spot = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            spot[i] = i-positions;
+            if (spot[i] < 0) {
+                spot[i] = array.length-positions+i;
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            result[i] = array[spot[i]];
+            System.out.println(result[i]);
+        }
+        return result;
+    }
+}
